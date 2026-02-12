@@ -31,29 +31,125 @@ The system combines traditional data science pipelines with LLM-powered reasonin
 - Generates structured TXT and PDF reports
 - Includes automated AI-generated insights
 
-### Interactive AI Dashboard
+### Professional Trading Dashboard (Streamlit + Plotly)
 
-- Streamlit app to upload datasets and generate AI reports
-- Downloadable reports and trading signals
+- Interactive candlestick charts
+- Moving average overlays (fast & slow MA)
+- Volume and volatility analysis
+- Dynamic KPI cards (price, volume, highs, trend signal)
+- Date range and asset filtering
 
-### System Architecture
+## System Architecture
 
-**Data Ingestion & Cleaning Layer**
-- Preprocesses structured datasets for analysis.
+**1. Data Ingestion & Cleaning Layer** <br>
+&nbsp;&nbsp;&nbsp;Preprocesses structured datasets for analysis.
 
-**EDA & Visualization Layer**
-- Computes statistics and generates visualizations.
+**2. EDA & Visualization Layer** <br>
+&nbsp;&nbsp;&nbsp;Computes statistics and generates visualizations.
 
-**Signal Generation Layer**
-- Produces baseline quantitative trading signals.
+**3. Signal Generation Layer** <br>
+&nbsp;&nbsp;&nbsp;Produces baseline quantitative trading signals.
 
-**LLM Research Agent**
-- Generates executive summaries, technical reports, and actionable insights.
+**4. LLM Research Agent** <br>
+&nbsp;&nbsp;&nbsp;Generates executive summaries, technical reports, dashboard, and actionable insights.
 
-**Reporting Layer**
-- Exports results to HTML, TXT, and PDF formats.
+**5. Reporting Layer** <br>
+&nbsp;&nbsp;&nbsp;Exports results to HTML, TXT, and PDF formats.
 
-**Interactive UI Layer**
-- Streamlit-based interface for non-technical users.
+**6. Interactive UI Layer** <br>
+&nbsp;&nbsp;&nbsp;Streamlit-based interface for non-technical users.
 
+
+
+## Tech Stack
+
+- Python
+- Pandas, NumPy – Data processing
+- Plotly – Financial visualization (candlestick, volume)
+- Streamlit – Interactive dashboard UI
+- Ollama (Llama 3.2) – Local LLM inference
+- ydata-profiling – Automated EDA reports
+
+
+## Project Structure
+
+```
+trading-eda-agent/
+│
+├── app.py # Streamlit dashboard (main UI)
+├── eda_agent.py # Automated EDA + AI summarization pipeline
+├── requirements.txt # Python dependencies
+├── all_stocks_5yr.csv # Sample trading dataset (or user dataset)
+│
+├── outputs/
+│ ├── eda_report.html # Auto-generated EDA report
+│ ├── eda_report.pdf # PDF summary report
+│ ├── report.txt # AI analyst textual summary
+│ └── signals.csv # Generated trading signals
+│
+├── plots/ # Generated charts
+└── README.md
+```
+
+## How to Run
+
+### 1. Install Dependencies 
+- pip install -r requirements.txt
   
+### 2. Start Ollama (Local LLM)
+- ollama serve
+- ollama pull llama3.2
+  
+### 3. Run Automated EDA Agent
+- python eda_agent.py
+
+**Generates:**
+- eda_report.html
+- report.txt
+- signals.csv
+
+### 4. Launch Dashboard
+- streamlit run app.py
+**Open browser at:** <br>
+&nbsp;http://localhost:8501
+
+
+## Dashboard Capabilities
+
+- Interactive candlestick trading chart
+- Moving average crossover trend signal
+- Volatility and returns metrics
+- AI-generated trading commentary
+- Natural language Q&A with dataset
+
+
+## Example AI Analyst Output
+
+- **Trend Summary:** Market shows bullish momentum with increasing moving average crossover.
+- **Key Risks:** Elevated volatility and declining volume indicate potential trend reversal risk.
+- **Actionable Insight:** Monitor MA crossover and volume confirmation before entering long positions.
+
+
+## Output
+
+<img width="1893" height="1006" alt="image" src="https://github.com/user-attachments/assets/d43dc2dc-c4f4-4bf3-b449-4c8c16178f3b" />
+
+
+## Why This Project Matters
+
+This project demonstrates: <br>
+- Building AI-powered data products
+- Integrating LLMs into analytics workflows
+- Financial time-series visualization
+- End-to-end ML system engineering
+- Product-style dashboard development <br>
+It is designed to mirror real quant research tools and fintech analytics platforms.
+
+
+## Future Improvements
+
+- Backtesting engine with equity curve & Sharpe ratio
+- Multi-asset portfolio analytics
+- Real-time market data ingestion
+- ChatGPT-style conversational dataset interface
+- Cloud deployment (HuggingFace / AWS / Render)

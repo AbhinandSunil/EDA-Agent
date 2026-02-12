@@ -79,13 +79,13 @@ trading-eda-agent/
 ├── app.py # Streamlit dashboard (main UI)
 ├── eda_agent.py # Automated EDA + AI summarization pipeline
 ├── requirements.txt # Python dependencies
-├── all_stocks_5yr.csv # Sample trading dataset (or user dataset)
+├── all_stocks_5yr.zip # Zip file containing sample trading dataset (or user dataset)
 │
 ├── outputs/
 │ ├── eda_report.html # Auto-generated EDA report
 │ ├── eda_report.pdf # PDF summary report
 │ ├── report.txt # AI analyst textual summary
-│ └── signals.csv # Generated trading signals
+│ └── signals.zip # Zip file containing generated trading signals
 │
 ├── plots/ # Generated charts
 └── README.md
